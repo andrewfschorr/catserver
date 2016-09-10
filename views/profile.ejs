@@ -1,0 +1,74 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body        { padding-top:80px; word-wrap:break-word; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <form class="submit-task" action="/task/<%= user.local.email %>" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name of task</label>
+                    <input type="task" class="form-control" name="task" id="task" placeholder="task name">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <br><br>
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>thing one</th>
+                        <th>thing two</th>
+                        <th>thing three</th>
+                    </tr>
+                    <tr>
+                        <td>sl;dfj</td>
+                        <td>sdlfhsdflhsdf</td>
+                        <td>sdkfhsdkfhsd</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.submit-task').on('submit', function(e){
+        e.preventDefault();
+        console.log(this);
+    })
+});-->
+</script>
+</body>
+</html>
